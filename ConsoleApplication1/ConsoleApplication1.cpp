@@ -9,7 +9,7 @@ int main()
 {
     int n1, n2;
     /*std::cin >> n;
-    std::cout << std::hex << 10 << '\n';
+    std::cout << std::hex << 10 << '\n';f
     std::cout << "Hello World!\n";*/
 
     std::string inpStr;
