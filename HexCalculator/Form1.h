@@ -38,6 +38,7 @@ namespace CppCLRWinformsProjekt {
 	protected:
 
 
+
 	private: System::Windows::Forms::TextBox^ textBox2;
 
 	private: System::Windows::Forms::TextBox^ textBox3;
