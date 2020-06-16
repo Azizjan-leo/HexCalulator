@@ -1,5 +1,10 @@
 #pragma once
-
+#include <string>
+#include <iostream>
+#include <iomanip>
+#include <sstream>
+System::String^ Addition(System::String^ first, System::String^ second);
+System::String^ Substraction(System::String^ first, System::String^ second);
 namespace CppCLRWinformsProjekt {
 
 	using namespace System;
@@ -8,7 +13,7 @@ namespace CppCLRWinformsProjekt {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
-
+	
 	/// <summary>
 	/// Zusammenfassung für Form1
 	/// </summary>
@@ -118,6 +123,7 @@ namespace CppCLRWinformsProjekt {
 			this->comboBox1->Size = System::Drawing::Size(189, 22);
 			this->comboBox1->TabIndex = 8;
 			this->comboBox1->Text = L"Choose one";
+			this->comboBox1->SelectedIndexChanged += gcnew System::EventHandler(this, &Form1::comboBox1_SelectedIndexChanged);
 			// 
 			// label3
 			// 
@@ -163,5 +169,20 @@ namespace CppCLRWinformsProjekt {
 		}
 #pragma endregion
 	
+private: System::Void comboBox1_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
+	
+	switch (comboBox1->SelectedIndex)
+	{
+	case 0:
+		textBox3->Text = Addition(textBox1->Text, textBox2->Text);
+		break;
+	case 1:
+		textBox3->Text = Substraction(textBox1->Text, textBox2->Text);
+		break;
+	default:
+		break;
+	}
+	
+}
 };
 }
